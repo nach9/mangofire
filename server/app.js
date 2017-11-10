@@ -115,6 +115,9 @@ let Cron = new CronJob('*/5 * * * * *', function() {
   } else {
     imgmango = '../assets/age1.jpeg'
   }
+  if(mangoTree._age>30){
+    mangoTree.reset()
+  }
   db.ref('/imgpic').set(imgmango)
 
   console.log(`[Year ${mangoTree._age} Report] Height = ${mangoTree._height} | Fruits harvested = ${mangoTree._harvested} health=${mangoTree._healthyStatus}`)
